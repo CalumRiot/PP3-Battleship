@@ -112,6 +112,23 @@ def count_hit_ships(board):
     return count
 
 
+# Function for game turns for both user and computer
+# Changes the display of the grid if the user or computer hits a target
+
+
+def turn(board):
+    if board == player_guess_grid:
+        row, column = user_input(player_guess_grid)
+    else:
+        row, column = random.randint(0,7), random.randint(0,7)
+    if board[row][column] in ["-", "X"]:
+        turn(board)
+    elif board == player_guess_grid:
+        board[row][column] = "X" if computer_display_grid[row][column] == "X" else "-"
+    else:
+        board[row][column] = "X" if player_display_grid[row][column] == "X" else "-"
+
+
 # End display functions for if user wins or loses
 
 
