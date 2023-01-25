@@ -31,7 +31,14 @@ def place_ships(board, length_of_ships):
                     for i in range(column, column + ship_length) if orientation == "H" else range(row, row + ship_length):
                         board[row if orientation == "V" else i][column if orientation == "V" else i] = "X"
                     break
-        
+        else:
+            place_ship = True
+            print('Place the ship with a length of ' + str(ship_length))
+            row, column, orientation = user_input(place_ship)
+            if check_ship_fit(ship_length, row, column, orientation) and not ship_overlaps(board, row, column, orientation, ship_length):
+                for i in range(column, column + ship_length) if orientation == "H" else range(row, row + ship_length):
+                    board[row if orientation == "V" else i][column if orientation == "V" else i] = "X"
+                print_board(player_display_grid)
 
 # Function ensuring ship placements fit within set grid
 
