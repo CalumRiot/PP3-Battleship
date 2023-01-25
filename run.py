@@ -1,7 +1,9 @@
 import random
 import pyfiglet
 
+
 # Add values for ships & game grid
+
 
 length_of_ships = [2, 3, 4, 5]
 player_display_grid = [[" "] * 8 for i in range(8)]
@@ -10,7 +12,9 @@ player_guess_grid = [[" "] * 8 for i in range(8)]
 computer_guess_grid = [[" "] * 8 for i in range(8)]
 grid_values = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7}
 
+
 # Create Game board
+
 
 def print_board(board):
     print("  A B C D E F G H")
@@ -45,7 +49,8 @@ def place_ships(board, length_of_ships):
 
 
 # Functions to ensure ships don't overlap when placed and to ensure
-# that ships are also placed within the defined grid size 
+# that ships are also placed within the defined grid size
+ 
 
 def check_ship_fit(ship_length, row, column, orientation):
     if orientation == "H":
@@ -60,10 +65,40 @@ def ship_overlaps(board, row, column, orientation, ship_length):
         return any(board[i][column] == "X" for i in range(row, row + ship_length))
 
 
-# Function allowing user to select grid to target
+# Function for collecting user inputs when placing ships on grid
 
-
-
+def user_input(place_ship):
+    while True:
+        try:
+            row = int(input("Enter the row 1-8 of the ship: ")) - 1
+            if 0 <= row <= 7:
+                break
+            print('Enter a valid number between 1-8')
+        except ValueError:
+            print('Enter a valid number between 1-8')
+    
+    while True:
+        try:
+            column = input("Enter the column of the ship: ").upper()
+            column = grid_values[column]
+            if 0 <= column <= 7:
+                break
+            print('Enter a valid letter between A-H')
+        except KeyError:
+            print('Enter a valid letter between A-H')
+    
+    if place_ship:
+        while True:
+            try:
+                orientation = input("Enter orientation (H or V): ").upper()
+                if orientation in ['H','V']:
+                    break
+                print('Enter a valid orientation H or V')
+            except TypeError:
+                print('Enter a valid orientation H or V')
+        return row, column, orientation
+    else:
+        return row, column
 
 
 # Function to check if user hit a ship
