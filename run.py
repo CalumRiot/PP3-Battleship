@@ -53,6 +53,11 @@ def check_ship_fit(ship_length, row, column, orientation):
     else:
         return row + ship_length <= 8
 
+def ship_overlaps(board, row, column, orientation, ship_length):
+    if orientation == "H":
+        return any(board[row][i] == "X" for i in range(column, column + ship_length))
+    else:
+        return any(board[i][column] == "X" for i in range(row, row + ship_length))
 
 
 # Function allowing user to select grid to target
