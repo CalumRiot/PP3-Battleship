@@ -73,9 +73,9 @@ def user_input(place_ship):
             row = int(input("Enter the row 1-8 of the ship: ")) - 1
             if 0 <= row <= 7:
                 break
-            print('Enter a valid number between 1-8')
+            print('Please enter a number between 1-8')
         except ValueError:
-            print('Enter a valid number between 1-8')
+            print('Please enter a number between 1-8')
     
     while True:
         try:
@@ -83,9 +83,9 @@ def user_input(place_ship):
             column = grid_values[column]
             if 0 <= column <= 7:
                 break
-            print('Enter a valid letter between A-H')
+            print('Please enter a letter between A-H')
         except KeyError:
-            print('Enter a valid letter between A-H')
+            print('Please enter a letter between A-H')
     
     if place_ship:
         while True:
@@ -93,18 +93,23 @@ def user_input(place_ship):
                 orientation = input("Enter orientation (H or V): ").upper()
                 if orientation in ['H','V']:
                     break
-                print('Enter a valid orientation H or V')
+                print('Please enter a orientation of H or V')
             except TypeError:
-                print('Enter a valid orientation H or V')
+                print('Please enter a orientation of H or V')
         return row, column, orientation
     else:
         return row, column
 
 
-# Function to check if user hit a ship
+# Function for counting how many targets have been hit
 
-
-
+def count_hit_ships(board):
+    count = 0
+    for row in board:
+        for column in row:
+            if column == "X":
+                count += 1
+    return count
 
 
 # End display functions for if user wins or loses
