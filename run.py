@@ -5,7 +5,7 @@ import pyfiglet
 # Add values for ships & game grid
 
 
-length_of_ships = [2, 3, 4, 5]
+length_of_ships = [2,3,4,5]
 player_display_grid = [[" "] * 8 for i in range(8)]
 computer_display_grid = [[" "] * 8 for i in range(8)]
 player_guess_grid = [[" "] * 8 for i in range(8)]
@@ -29,23 +29,40 @@ def print_board(board):
 # Computer ships are placed at random while user is prompted to input there own
 
 
-def place_ships(board, length_of_ships):
+def place_ships(board):
+    
     for ship_length in length_of_ships:
-        if board == computer_display_grid:
-            while True:
+        
+        while True:
+            if board == computer_display_grid:
                 orientation, row, column = random.choice(["H", "V"]), random.randint(0,7), random.randint(0,7)
-                if check_ship_fit(ship_length, row, column, orientation) and not ship_overlaps(board, row, column, orientation, ship_length):
-                    for i in range(column, column + ship_length) if orientation == "H" else range(row, row + ship_length):
-                        board[row if orientation == "V" else i][column if orientation == "V" else i] = "X"
-                    break
-        else:
-            place_ship = True
-            print('Place the ship with a length of ' + str(ship_length))
-            row, column, orientation = user_input(place_ship)
-            if check_ship_fit(ship_length, row, column, orientation) and not ship_overlaps(board, row, column, orientation, ship_length):
-                for i in range(column, column + ship_length) if orientation == "H" else range(row, row + ship_length):
-                    board[row if orientation == "V" else i][column if orientation == "V" else i] = "X"
-                print_board(player_display_grid)
+                if check_ship_fit(ship_length, row, column, orientation):
+                  
+                    if ship_overlaps(board, row, column, orientation, ship_length) == False:
+                       
+                        if orientation == "H":
+                            for i in range(column, column + ship_length):
+                                board[row][i] = "X"
+                        else:
+                            for i in range(row, row + ship_length):
+                                board[i][column] = "X"
+                        break
+            else:
+                place_ship = True
+                print('Place the ship with a length of ' + str(ship_length))
+                row, column, orientation = user_input(place_ship)
+                if check_ship_fit(ship_length, row, column, orientation):
+                    
+                        if ship_overlaps(board, row, column, orientation, ship_length) == False:
+                      
+                            if orientation == "H":
+                                for i in range(column, column + ship_length):
+                                    board[row][i] = "X"
+                            else:
+                                for i in range(row, row + ship_length):
+                                    board[i][column] = "X"
+                            print_board(player_display_grid)
+                            break 
 
 
 # Functions to ensure ships don't overlap when placed and to ensure
@@ -119,18 +136,53 @@ def count_hit_ships(board):
 def turn(board):
     if board == player_guess_grid:
         row, column = user_input(player_guess_grid)
+        if board[row][column] == "-":
+            turn(board)
+        elif board[row][column] == "X":
+            turn(board)
+        elif computer_display_grid[row][column] == "X":
+            board[row][column] = "X"
+        else:
+            board[row][column] = "-"
     else:
         row, column = random.randint(0,7), random.randint(0,7)
-    if board[row][column] in ["-", "X"]:
-        turn(board)
-    elif board == player_guess_grid:
-        board[row][column] = "X" if computer_display_grid[row][column] == "X" else "-"
-    else:
-        board[row][column] = "X" if player_display_grid[row][column] == "X" else "-"
+        if board[row][column] == "-":
+            turn(board)
+        elif board[row][column] == "X":
+            turn(board)
+        elif player_display_grid[row][column] == "X":
+            board[row][column] = "X"
+        else:
+            board[row][column] = "-"
 
 
-# End display functions for if user wins or loses
+# print and place methods for welcoming, playing and ending game
+# Game ends once count_hit_ships function reaches 14 by either user or computer
 
 
+print(" Welcome to Battleship ")
+place_ships(computer_display_grid)
 
-
+print_board(player_display_grid)
+place_ships(player_display_grid)
+        
+while True:
+   
+    while True:
+        print(" Player Turn ")
+        print('Guess location of Battleships')
+        print_board(player_guess_grid)
+        turn(player_guess_grid)
+        break
+    if count_hit_ships(player_guess_grid) == 14:
+        print("You win!")
+        break   
+   
+    while True:
+        print(" Computer Turn ")
+        turn(computer_guess_grid)
+        break           
+    print_board(computer_guess_grid)   
+    if count_hit_ships(computer_guess_grid) == 14:
+        print(" You Lose :( ")
+        break
