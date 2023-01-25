@@ -3,7 +3,7 @@ import pyfiglet
 
 # Add values for ships & game grid
 
-ships_length = [2, 3, 4, 5]
+length_of_ships = [2, 3, 4, 5]
 player_display_grid = [[" "] * 8 for i in range(8)]
 computer_display_grid = [[" "] * 8 for i in range(8)]
 player_guess_grid = [[" "] * 8 for i in range(8)]
@@ -22,9 +22,16 @@ def print_board(board):
 
 # Create function to allow users to select ship placement
 
-
-
-
+def place_ships(board, length_of_ships):
+    for ship_length in length_of_ships:
+        if board == computer_display_grid:
+            while True:
+                orientation, row, column = random.choice(["H", "V"]), random.randint(0,7), random.randint(0,7)
+                if check_ship_fit(ship_length, row, column, orientation) and not ship_overlaps(board, row, column, orientation, ship_length):
+                    for i in range(column, column + ship_length) if orientation == "H" else range(row, row + ship_length):
+                        board[row if orientation == "V" else i][column if orientation == "V" else i] = "X"
+                    break
+        
 
 # Function ensuring ship placements fit within set grid
 
