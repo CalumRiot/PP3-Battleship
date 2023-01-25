@@ -1,31 +1,55 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Battleships**
 
-Welcome CalumRiot,
+## **Portfolio 3 Project: A command-line application using Python**
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## Summary:
+Battleships is a strategy type guessing game where two players i.e player vs player or player vs ai, take turns attempting to sink each others battleships. The location of each players battleship is choosen at the start of the game and players can sink there opponents battleships by guessing where in a set grid there battleship is. Whoever is the first to destroy there opponents battleships wins. The origins of the game are debated however the first commercially available version of the game was sold in 1931 in the USA under the name of Salvo.
 
-## Reminders
+* A link to the deployed Git site using Heroku can be found here:
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## Table of Contents
 
-## Creating the Heroku app
++ [User Experience](#user-experience)
++ [Planning](#planning)
++ [Flowchart](#flowchart)
++ [User Stories](#user-stories)
++ [Features](#features)
++ [Technologies Used](#technologies-used)
++ [Testing](#testing)
++ [Deployment](#deployment)
++ [Credits](#credits)
++ [Acknowledgements](#acknowledgements)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## User Experience:
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Planning:
+Before coding the game I decided to map out what functions would be required for the game such as a function to create the board, a function to place the ships on the board, a function to check if the user/computer ships has been hit. I also had to plan out the associated rules that would be required with these functions some included making sure the user selected a valid row/column such as A,B,C and 1,2,3. Another rule that was also required was to ensure that the computer didn't guess the same place on the board twice. A mapped out design of the functions and there associated rules can be found below.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### Flowchart:
+![Flowchart for Game](assets/images/Flow%20Chart%20-%20Battleship.png)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+### User Stories:
 
-## Constraints
+- User would like to play an online version of the classic Battleship game
+- User would like the game to be as similar as possible to the boardgame version
+- User would like to be presented with clear instructions on how the play
+- User would like to play the game on his own versus a competent cpu bot
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+## Features:
+
+
+## Technologies Used:
+
+
+## Testing:
+
+
+## Deployment:
+
+
+## Credits:
+
+
+## Acknowledgements:

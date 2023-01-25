@@ -20,5 +20,5 @@ def print_board(board):
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
-
+# Create function to allow users to select ship placement
 
