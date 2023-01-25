@@ -22,3 +22,30 @@ def print_board(board):
 
 # Create function to allow users to select ship placement
 
+
+
+
+
+# Function ensuring ship placements fit within set grid
+
+
+
+
+
+# Function allowing user to select grid to target
+
+
+
+
+
+# Function to check if user hit a ship
+
+
+
+
+
+# End display functions for if user wins or loses
+
+
+
+
