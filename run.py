@@ -20,7 +20,10 @@ def print_board(board):
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
-# Create function to allow users to select ship placement
+
+# Function for placing ships onto board with either vertical or horizontal axis
+# Computer ships are placed at random while user is prompted to input there own
+
 
 def place_ships(board, length_of_ships):
     for ship_length in length_of_ships:
@@ -40,9 +43,15 @@ def place_ships(board, length_of_ships):
                     board[row if orientation == "V" else i][column if orientation == "V" else i] = "X"
                 print_board(player_display_grid)
 
-# Function ensuring ship placements fit within set grid
 
+# Functions to ensure ships don't overlap when placed and to ensure
+# that ships are also placed within the defined grid size 
 
+def check_ship_fit(ship_length, row, column, orientation):
+    if orientation == "H":
+        return column + ship_length <= 8
+    else:
+        return row + ship_length <= 8
 
 
 
