@@ -23,7 +23,7 @@ Battleships is a strategy type guessing game where two players i.e player vs pla
 ## **User Experience:**
 
 ### **Planning:**
-Before coding the game I decided to map out what functions would be required for the game such as a function to create the board, a function to place the ships on the board, a function to check if the user/computer ships has been hit. I also had to plan out the associated rules that would be required with these functions some included making sure the user selected a valid row/column such as A,B,C and 1,2,3. Another rule that was also required was to ensure that the computer didn't guess the same place on the board twice. A mapped out design of the functions and there associated rules can be found below.
+Before coding the game I decided to map out what functions would be required for the game such as a function to create the board, a function to place the ships on the board, a function to check if the user/computer ships has been hit. I also had to plan out the associated rules that would be required with these functions some included making sure the user selected a valid row/column such as A,B,C and 1,2,3. Another rule that was also required was to ensure that the computer didn't guess the same place on the board twice, Another rule was to ensure battleships weren't placed on top of one another etc. A mapped out design of the functions method I used prior to starting the project can be found below.
 
 ### **Flowchart:**
 ![Flowchart for Game](assets/images/Flow%20Chart%20-%20Battleship.png)
