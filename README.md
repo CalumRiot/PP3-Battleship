@@ -70,6 +70,13 @@ Before coding the game I decided to map out what functions would be required for
 
 ![Game End](assets/readme-images/game-you-win.PNG)
 
+### **Future Features**
+
+For the most part the game works well and is playable; however, there is one feature that could be added in order to improve the experience for the user and make the game overall play better.
+
+- The game itself is quite easy to win the function designed for the computer simply selects a grid at random each time it makes a turn. Compare this too a user as once they find a battleship they will immediately target the surrounding grid zones in order to fully sink it. A solution would be to come up with the logic neccessary to design a function that once it finds a target it will immediately begin to target the areas around it in order to sink that ship first before moving on. Rules would have to be made to ensure that it targets the area around it to find out which axis the ship is vertical or horizontal, another rule to ensure it stops firing once it misses along the axis, another rule to ensure it then checks the otherside of the direction it began firing in to ensure it hasn't missed anything and finally another rule to ensure that when ships are placed next to each other that the logic doesn't break. Once the computer finally knows that the ship is sunk it would continue randomly guessing once more on the grid until it finds another ship and repeats this procedure. It becomes quite clear why this feature wasn't included as it's quite a lot of logic for such a small addition but not impossible!
+
+
 ***
 
 ## **Technologies Used:**
