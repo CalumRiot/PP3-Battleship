@@ -6,6 +6,7 @@
 Battleships is a strategy type guessing game where two players i.e player vs player or player vs ai, take turns attempting to sink each others battleships. The location of each players battleship is choosen at the start of the game and players can sink there opponents battleships by guessing where in a set grid there battleship is. Whoever is the first to destroy there opponents battleships wins. The origins of the game are debated however the first commercially available version of the game was sold in 1931 in the USA under the name of Salvo.
 
 * A link to the deployed Git site using Heroku can be found here:
+https://project3-battleship.herokuapp.com/
 
 ***
 
