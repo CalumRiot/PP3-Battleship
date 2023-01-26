@@ -28,7 +28,6 @@ def print_board(board):
 # Function for placing ships onto board with either vertical or horizontal axis
 # Computer ships are placed at random while user is prompted to input there own
 
-
 def place_ships(board):
     
     for ship_length in length_of_ships:
@@ -160,29 +159,32 @@ def turn(board):
 # Game ends once count_hit_ships function reaches 14 by either user or computer
 
 
-print(" Welcome to Battleship ")
-place_ships(computer_display_grid)
+def main():
+    print(" Welcome to Battleship ")
+    place_ships(computer_display_grid)
+    
+    print_board(player_display_grid)
+    place_ships(player_display_grid)
+    while True:
 
-print_board(player_display_grid)
-place_ships(player_display_grid)
-        
-while True:
+        while True:
+            print(" Player Turn ")
+            print('Guess location of Battleships')
+            print_board(player_guess_grid)
+            turn(player_guess_grid)
+            break
+        if count_hit_ships(player_guess_grid) == 14:
+            print("You win!")
+            break   
    
-    while True:
-        print(" Player Turn ")
-        print('Guess location of Battleships')
-        print_board(player_guess_grid)
-        turn(player_guess_grid)
-        break
-    if count_hit_ships(player_guess_grid) == 14:
-        print("You win!")
-        break   
-   
-    while True:
-        print(" Computer Turn ")
-        turn(computer_guess_grid)
-        break           
-    print_board(computer_guess_grid)   
-    if count_hit_ships(computer_guess_grid) == 14:
-        print(" You Lose :( ")
-        break
+        while True:
+            print(" Computer Turn ")
+            turn(computer_guess_grid)
+            break
+        print_board(computer_guess_grid)   
+        if count_hit_ships(computer_guess_grid) == 14:
+            print(" You Lose :( ")
+            break
+
+if __name__ == '__main__':
+    main()
