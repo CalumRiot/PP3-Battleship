@@ -86,7 +86,26 @@ For the most part the game works well and is playable; however, there is one fea
 
 
 ## **Deployment:**
+*Note: this is how I deployed my own project and other features maybe required for projects that have google docs attached or are designed using different coding languages* 
 
+1. Navigate to Heroku.com and on the daskboard, select "New" and click on "Create New App"
+- Create a app name "name must be unique"
+- Select your region
+- Click the "Create App" button
+
+2. Navigate to the Settings tab
+- Scroll down and select the "Add Buildpack" button
+- Add the buildpacks of Python and nodejs ensuring Python is placed on top of nodejs.
+- Click the "Save Changes" button
+
+3. Navigate to the Deploy tab
+- Select GitHub and link your Github account to Heroku
+- Search for your project repoistory by name "PP3-Battleship"
+- Click the "Connect" button
+- Scroll down to Deploy a Github branch and click "Deploy Branch"
+- Heroku will now begin buiding the app
+
+4. Once app is built heroku will provide a link to it which can be used by clicking "Open App"
 
 ## **Credits:**
 
