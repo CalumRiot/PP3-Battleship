@@ -160,7 +160,8 @@ def turn(board):
 
 
 def main():
-    print(" Welcome to Battleship ")
+    battleship_welcome = pyfiglet.figlet_format("Welcome to Battleship", font = "big"  )
+    print(battleship_welcome)
     place_ships(computer_display_grid)
     
     print_board(player_display_grid)
@@ -168,8 +169,9 @@ def main():
     while True:
 
         while True:
-            print(" Player Turn ")
-            print('Guess location of Battleships')
+            player_turn = pyfiglet.figlet_format("Players Turn", font = "big"  )
+            print(player_turn)
+            print("Guess where the battleship is")
             print_board(player_guess_grid)
             turn(player_guess_grid)
             break
@@ -178,7 +180,8 @@ def main():
             break   
    
         while True:
-            print(" Computer Turn ")
+            computer_turn = pyfiglet.figlet_format("Computers Turn", font = "big"  )
+            print(computer_turn)
             turn(computer_guess_grid)
             break
         print_board(computer_guess_grid)   
