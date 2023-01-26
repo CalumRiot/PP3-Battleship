@@ -134,7 +134,7 @@ def count_hit_ships(board):
 
 def turn(board):
     if board == player_guess_grid:
-        row, column = user_input(player_guess_grid)
+        row, column = user_input(False)
         if board[row][column] == "-":
             turn(board)
         elif board[row][column] == "X":
