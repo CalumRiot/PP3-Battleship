@@ -103,7 +103,7 @@ def ship_overlaps(board, row, column, orientation, ship_length):
 def user_input(place_ship):
     while True:
         try:
-            row = int(input("Enter the row 1-8 of the ship: ")) - 1
+            row = int(input("Enter the row 1-8 of the ship: ").strip()) - 1
             if 0 <= row <= 7:
                 break
             print("Please enter a number between 1-8")
@@ -112,7 +112,7 @@ def user_input(place_ship):
 
     while True:
         try:
-            column = input("Enter the column of the ship: ").upper()
+            column = input("Enter the column of the ship: ").upper().strip()
             column = grid_values[column]
             if 0 <= column <= 7:
                 break
@@ -123,7 +123,7 @@ def user_input(place_ship):
     if place_ship:
         while True:
             try:
-                orientation = input("Enter orientation (H or V): ").upper()
+                orientation = input("Enter orientation (H or V): ").upper().strip()
                 if orientation in ["H", "V"]:
                     break
                 print("Please enter a orientation of H or V")
