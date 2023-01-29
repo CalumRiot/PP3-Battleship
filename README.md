@@ -122,6 +122,11 @@ For the most part the game works well and is playable; however, there is one fea
 
 ## **Credits:**
 
-
+- W3Schools
+- Slack
+- Knowledge Mavens: How to code Battleship in Python: https://www.youtube.com/watch?v=tF1WRCrd_HQ&ab_channel=KnowledgeMavens
+- Code Institute PP3 Sample Project: Love Sandwiches
 
 ## **Acknowledgements:**
+
+- I'd like to make a special thank you to my mentor Brian Macharia for his continued support, guidance and suggestions on how to improve my code throughout this project.
