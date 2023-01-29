@@ -105,7 +105,7 @@ For the most part the game works well and is playable; however, there is one fea
 
 ![Python Validation](assets/readme-images/python-validation.PNG)
 
-- Lighthouse Test was performed on deployed heroku site for Desktop devices as website was on designed with mobile responsiveness in mind.
+- Lighthouse Test was performed on deployed heroku site for Desktop devices as website was not designed with mobile responsiveness in mind.
 
 ![Lighthouse Test](assets/readme-images/lighthouse-test-pp3.PNG)
 
