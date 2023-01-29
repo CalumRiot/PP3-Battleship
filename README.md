@@ -82,7 +82,18 @@ For the most part the game works well and is playable; however, there is one fea
 
 ## **Technologies Used:**
 
+### **Languages Used:**
 
+- Python3 Language
+
+### **Tools Used:**
+
+- Code Institute Validator: To test Python code for bugs.
+- Google Lighthouse Tester: To test overall loading speeds and performance of site.
+- Pyfiglet: To add stylised text to code.
+- Heroku: To deploy application to a site where the code can be executed.
+- Git: Was used for version control by using the Gitpod terminal to commit to Git and Push to GitHub.
+- Github: Was used as the repository for the project's code after being pushed from Git.
 
 ## **Testing:**
 
