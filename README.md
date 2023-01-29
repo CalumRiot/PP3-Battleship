@@ -86,6 +86,17 @@ For the most part the game works well and is playable; however, there is one fea
 
 ## **Testing:**
 
+- Tests where performed on each of the functions within the run.py file to ensure that all functions worked as intended:
+
+![Testing Doc](assets/readme-images/PP3-Testing-Doc.PNG)
+
+- Python code was run through Code Institute's python validator to test for bugs. 10 bugs recorded.
+
+![Python Validation](assets/readme-images/python-validation.PNG)
+
+- Lighthouse Test was performed on deployed heroku site for Desktop devices as website was on designed with mobile responsiveness in mind.
+
+![Lighthouse Test](assets/readme-images/lighthouse-test-pp3.PNG)
 
 ## **Deployment:**
 *Note: this is how I deployed my own project and other features maybe required for projects that have google docs attached or are designed using different coding languages* 
